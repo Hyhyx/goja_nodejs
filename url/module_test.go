@@ -4,8 +4,8 @@ import (
 	_ "embed"
 	"testing"
 
+	"github.com/Hyhyx/goja_nodejs/require"
 	"github.com/dop251/goja"
-	"github.com/dop251/goja_nodejs/require"
 )
 
 func TestURL(t *testing.T) {

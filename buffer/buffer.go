@@ -7,9 +7,9 @@ import (
 	"reflect"
 	"strconv"
 
+	"github.com/Hyhyx/goja_nodejs/errors"
+	"github.com/Hyhyx/goja_nodejs/require"
 	"github.com/dop251/goja"
-	"github.com/dop251/goja_nodejs/errors"
-	"github.com/dop251/goja_nodejs/require"
 
 	"golang.org/x/text/encoding/unicode"
 )

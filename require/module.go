@@ -98,6 +98,7 @@ func (r *Registry) Enable(runtime *js.Runtime) *RequireModule {
 	}
 
 	runtime.Set("require", rrt.require)
+	runtime.Set("requireRemove", rrt.requireRemove)
 	return rrt
 }
 
@@ -181,6 +182,10 @@ func (r *Registry) getCompiledSource(p string) (*js.Program, error) {
 	return prg, nil
 }
 
+func (r *RequireModule) requireRemove(p string) {
+	delete(r.modules, p)
+	delete(r.r.compiled, p)
+}
 func (r *RequireModule) require(call js.FunctionCall) js.Value {
 	ret, err := r.Require(call.Argument(0).String())
 	if err != nil {
